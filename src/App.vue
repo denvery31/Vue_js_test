@@ -1,7 +1,7 @@
 <template>
   <p>Hello</p>
-  <div>
-    <div v-for="player in palyers" :key="player">
+  <div class="p_block">
+    <div v-for="player in palyers" :key="player.name" class="player">
       {{ player.name }}
     </div>
   </div>
@@ -34,4 +34,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.p_block {
+  background-color: red;
+  padding: 10%;
+  margin: 7%;
+  border-radius: 35px;
+}
+</style>
