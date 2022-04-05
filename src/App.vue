@@ -4,8 +4,8 @@
     <p class="p_top">Palyers:</p>
     <div class="p_playres">
       <div v-for="player in palyers" :key="player.name" class="player">
-        <p>{{ player.name }}</p>
-        <p>Ready: {{ player.ready }}</p>
+        <span>{{ player.name }}</span>
+        <span>Ready: {{ player.ready }}</span>
       </div>
     </div>
     <div class="btn">
@@ -35,22 +35,18 @@ export default {
       palyers: [
         {
           name: "Kolya",
-          age: 25,
           ready: false,
         },
         {
           name: "Petya",
-          age: 20,
           ready: false,
         },
         {
           name: "Vasya",
-          age: 30,
           ready: false,
         },
         {
           name: "Dmitriy",
-          age: 12,
           ready: false,
         },
       ],
@@ -82,10 +78,14 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
 body {
+  background-color: rgb(245, 242, 239);
+  opacity: 70%;
+
   font-family: "Noto Sans", sans-serif;
   font-size: 2.4rem;
-  background-color: rgb(245, 242, 239);
+  color: rgb(16, 40, 14);
 }
 
 .headder {
@@ -96,18 +96,19 @@ body {
   max-width: 100%;
 }
 
-.p_playres p {
-  max-width: 90%;
-  margin: auto;
+.p_playres span {
+  margin-left: 7%;
 }
 
 .p_playres > .player {
-  border-bottom: 0.1rem solid rgb(52, 129, 35);
   display: flex;
+
+  border-bottom: 0.1rem solid rgb(52, 129, 35);
 }
 
 .p_top {
   border-bottom: 0.2rem solid rgb(53, 70, 15);
+
   margin: 0;
   margin-bottom: 2%;
 }
@@ -125,16 +126,19 @@ body {
 }
 
 .btn button {
+  background-color: rgb(213, 227, 194);
+
   border: none;
-  padding: 2%;
   border-radius: 12px;
+
   width: 15%;
+
+  padding: 2%;
   margin: 0 3%;
-  background-color: rgb(227, 213, 194);
 }
 
 .btn button:hover {
-  opacity: 80%;
+  opacity: 70%;
   cursor: pointer;
 }
 </style>
