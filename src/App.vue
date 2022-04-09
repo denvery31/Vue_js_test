@@ -1,4 +1,7 @@
 <template>
+  <!--<my-button :title="'Exit'" /> 
+  <my-button title="Quite" /> -->
+
   <p class="headder">Wating for other playes...</p>
   <div class="p_block">
     <p class="p_top">Palyers:</p>
@@ -8,27 +11,28 @@
         <span>Ready: {{ player.ready }}</span>
       </div>
     </div>
-    <div class="btn">
-      <button
-        @click="
-          this.palyers[this.your_id].ready
-            ? make_all_not_ready()
-            : make_all_ready()
-        "
-        class="btn_ready"
-      >
-        {{ this.palyers[this.your_id].ready ? "Canel" : "Ready" }}
-      </button>
-      <button v-if="!each_player_ready()" class="btn_exit">Exit</button>
-      <button v-if="each_player_ready()" class="btn_start">Start</button>
-    </div>
+
+    <button
+      @click="
+        this.palyers[this.your_id].ready
+          ? make_all_not_ready()
+          : make_all_ready()
+      "
+    >
+      {{ this.palyers[this.your_id].ready ? "Canel" : "Ready" }}
+    </button>
+    <my-button v-if="!each_player_ready()" :title="'Exit'" />
+    <my-button v-if="each_player_ready()" :title="'Start'" />
   </div>
 </template>
 
 <script>
+import myButton from "@/components/globalComponents/myButton.vue";
 export default {
   name: "App",
-
+  components: {
+    myButton,
+  },
   data() {
     return {
       your_id: 1,
@@ -71,6 +75,10 @@ export default {
       this.palyers.forEach((player) => {
         player.ready = false;
       });
+    },
+    someMethod() {
+      alert("Imm gaaay");
+      console.log("maam");
     },
   },
 };
@@ -123,22 +131,5 @@ body {
   border-radius: 35px;
 
   background-color: rgba(255, 255, 255, 0.496);
-}
-
-.btn button {
-  background-color: rgb(213, 227, 194);
-
-  border: none;
-  border-radius: 12px;
-
-  width: 15%;
-
-  padding: 2%;
-  margin: 0 3%;
-}
-
-.btn button:hover {
-  opacity: 70%;
-  cursor: pointer;
 }
 </style>
