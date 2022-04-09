@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <button class="btn">{{ title }}</button>
-  </div>
+  <button>{{ title }}</button>
 </template>
 <script>
 export default {
@@ -16,9 +14,6 @@ export default {
 </script>
 
 <style scoped>
-div {
-  display: inline;
-}
 button {
   background-color: rgb(213, 227, 194);
 

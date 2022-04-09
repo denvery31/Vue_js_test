@@ -10,9 +10,9 @@
       </div>
     </div>
     <div class="btns">
-      <div class="myBtn"><my-button :title="'Start'" /></div>
-      <div class="myBtn"><my-button :title="'Exit'" /></div>
-      <div class="myBtn"><my-button :title="'Ready'" /></div>
+      <div><my-button :title="'Start'" /></div>
+      <div><my-button :title="'Exit'" /></div>
+      <div><my-button :title="'Ready'" /></div>
     </div>
     <!-- <button
       @click="
@@ -92,7 +92,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.496);
 }
 
-.btns > .myBtn {
+.btns > div {
   max-width: 100%;
   display: inline;
   margin: 5.1%;

@@ -1,19 +1,35 @@
 <template>
   <!--<my-button :title="'Exit'" /> 
   <my-button title="Quite" /> -->
-  <room-joining :players="palyers" />
+  <about-page @changePage="pageChanger" v-if="currentPage == 'about'" />
+  <room-creation v-if="currentPage == 'creation'" />
+  <room-joining v-if="currentPage == 'joining'" :players="palyers" />
+  <game-process v-if="currentPage == 'process'" />
 </template>
 
 <script>
 import roomJoining from "@/components/mainComponents/roomJoining.vue";
+import roomCreation from "@/components/mainComponents/roomCreation.vue";
+import gameProcess from "@/components/mainComponents/gameProcess.vue";
+import aboutPage from "@/components/mainComponents/aboutPage.vue";
 
 export default {
   name: "App",
   components: {
     roomJoining,
+    roomCreation,
+    gameProcess,
+    aboutPage,
+  },
+  methods: {
+    pageChanger(where) {
+      this.currentPage = where;
+    },
   },
   data() {
     return {
+      currentPage: "about",
+
       your_id: 1,
       palyers: [
         {
