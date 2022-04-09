@@ -16,13 +16,18 @@ export default {
 </script>
 
 <style scoped>
+div {
+  display: inline;
+}
 button {
   background-color: rgb(213, 227, 194);
 
   border: none;
   border-radius: 5em/5em;
 
-  padding: 1% 3%;
+  width: 20%;
+  padding: 3% 0;
+
   transition: 0.3s linear;
 }
 button:hover {
