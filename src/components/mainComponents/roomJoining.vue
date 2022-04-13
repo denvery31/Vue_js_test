@@ -6,7 +6,7 @@
     <div class="p_playres">
       <div v-for="player in players" :key="player.name" class="player">
         <span>{{ player.name }}</span>
-        <span>{{ player.ready ? "ready" : "not ready" }}</span>
+        <!--<span>{{ player.ready ? "ready" : "not ready" }}</span>-->
       </div>
     </div>
     <div class="btns">
